@@ -31,6 +31,7 @@ li {
 
 .container {
     width: 1300px;
+    padding: 0 12px;
     margin: auto;
 }
 
@@ -70,6 +71,18 @@ li {
     background-color: #f26464;
     color: white;
 }
+.main {
+    overflow: hidden;
+}
+
+.main .header-wrapper {
+    padding: 70px 0;
+    transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+    transition-timing-function: ease;
+    background-color: white;
+}
 
 .main .header {
     display: -webkit-box;
@@ -81,8 +94,6 @@ li {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    height: 40px;
-    padding: 70px 0;
 }
 
 .main .header .header-contentLeft {
@@ -155,25 +166,43 @@ li {
     color: white;
 }
 
+.main .header-wrapper.fixed-header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    padding: 20px 0;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 25%);
+    z-index: 99;
+}
+
 .main .profile .profile-infor {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-column-gap: 94px;
-    column-gap: 94px;
+    flex-wrap: wrap;
+    margin: 0 -12px;
 }
 
+.main .profile .profile-infor .infor-image {
+    flex-basis: 41.6666667%;
+    padding: 0 12px;
+}
 .main .profile .profile-infor .infor-image img {
-    width: 526px;
-    height: 600px;
+    width: 100%;
+    height: auto;
     -o-object-fit: cover;
     object-fit: cover;
 }
 
 .main .profile .profile-infor .infor-text {
-    width: 576px;
+    flex-basis: 58.3333333%;
+    padding: 0 12px;
 }
-
+.main .profile .profile-infor .infor-text .item {
+    padding-left: 70px;
+    padding-right: 100px;
+}
 .main .profile .profile-infor .infor-text .dumb-text {
     font-size: 1.6rem;
     line-height: 60px;
@@ -194,6 +223,7 @@ li {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    flex-wrap: wrap;
     margin-top: 60px;
     margin-left: -30px;
     margin-right: -30px;
@@ -233,6 +263,7 @@ li {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    flex-wrap: wrap;
     margin-left: -12px;
     margin-right: -12px;
 }
@@ -271,6 +302,7 @@ li {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    flex-wrap: wrap;
     padding-top: 15px;
     padding-bottom: 20px;
     margin: 0 -12px;
@@ -395,6 +427,7 @@ li {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    flex-wrap: wrap;
     margin: 0 -12px;
 }
 
@@ -508,4 +541,116 @@ li {
     color: rgba(255, 255, 255, 0.5);
     letter-spacing: 1px;
     font-size: 16px;
+}
+
+@media screen and (max-width: 1360px) {
+    .container {
+        width: 1116px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 936px;
+    }
+    .main .profile .profile-infor .infor-text .item {
+        padding-right: 0;
+    }
+    .latest-works .latest-work-inner .latest-work .item-left {
+        padding-bottom: 60px !important;
+    }
+}
+
+@media screen and (max-width: 993px) {
+    .container {
+        width: 696px;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .container {
+        width: 516px;
+    }
+    .main .header-wrapper {
+        padding: 20px 0;
+    }
+    .main
+        .header-wrapper
+        .header
+        .header-contentLeft
+        .contentLeft-logo
+        .logo-text {
+        display: none;
+    }
+    .main .profile {
+        margin-top: 110px;
+    }
+    .main .profile .infor-image,
+    .main .profile .infor-text {
+        flex-basis: 100% !important;
+    }
+    .main .profile .profile-infor .infor-text .item {
+        margin-top: 30px;
+        padding-left: 0;
+    }
+    .main .profile .profile-infor .infor-text .dumb-text {
+        padding-bottom: 0;
+        line-height: 40px;
+    }
+    .main .profile .profile-infor .infor-text .title h1 {
+        font-size: 3rem;
+        line-height: 40px;
+    }
+    .main .profile .profile-infor .infor-text .parameter {
+        margin-top: 20px;
+    }
+    .main .profile .profile-infor .infor-text .parameter .parameter-child > h1 {
+        font-size: 3rem;
+        line-height: 45px;
+    }
+    .main .profile .profile-infor .infor-text .parameter .parameter-child > p {
+        font-size: 1.4rem;
+        line-height: normal;
+    }
+    .main .profile .about .text p {
+        font-size: 15px;
+        line-height: 30px;
+        margin-bottom: 30px;
+    }
+    .main .profile .skills .skill-inner {
+        flex-basis: 100%;
+        margin-bottom: 40px;
+    }
+    .main
+        .profile
+        .work-experience
+        .work-experience-inner
+        .work-experience-inner_child {
+        flex-basis: 100%;
+        margin-bottom: 40px;
+    }
+    .main .profile .latest-works .latest-work-inner .latest-work .item-left,
+    .main .profile .latest-works .latest-work-inner .latest-work .item-right {
+        flex-basis: 100%;
+    }
+    .main .profile .latest-works .latest-work-inner {
+        padding: 30px;
+    }
+    .main .profile .about {
+        margin-bottom: 60px;
+    }
+    .session-pd-bt-sm {
+        margin-bottom: 0;
+    }
+    .session-pd-bt {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 578px) {
+    .container {
+        width: 100%;
+    }
+    .main .profile.container {
+        padding: 0 24px;
+    }
 }
